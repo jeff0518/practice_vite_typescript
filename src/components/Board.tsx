@@ -59,17 +59,11 @@ function Board() {
     }
 
     //當沒有空格時還未出現贏家，跳出平手！！！
+    if (!win && !squares.filter((square) => !square).length) {
+      setWinner("BOTH");
+    }
   }, [squares]);
-  // useEffect(() => {
-  //   const win: string | null = calculateWinnerHandler(squares);
-  //   if (win) {
-  //     setWinner(win);
-  //   }
 
-  //   if (!win || !squares.filter((square) => !square).length) {
-  //     setWinner("BOTH");
-  //   }
-  // }, [squares]);
   return (
     <div className={style.container}>
       {!winner && <p>Hey {currentPlayer}, it's your turn</p>}
