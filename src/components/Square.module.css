@@ -1,4 +1,6 @@
-.square {
+.square,
+.square_o,
+.square_x {
   width: 100px;
   height: 100px;
   font-size: 5rem;

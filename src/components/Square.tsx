@@ -1,6 +1,6 @@
 import style from "./Square.module.css";
 
-type Player = "X" | "O" | null;
+type Player = "X" | "O" | "BOTH" | null;
 
 interface SquareProps {
   value: Player;
@@ -20,9 +20,11 @@ function Square(props: SquareProps) {
     );
   }
   return (
-    <button className={style.square_o} disabled>
-      {value}
-    </button>
+    <>
+      <button className={style[`square_${value.toLocaleLowerCase()}`]} disabled>
+        {value}
+      </button>
+    </>
   );
 }
 
